@@ -44,7 +44,7 @@ body {
   display: grid;
   place-items: center stretch;
   grid-template-columns:
-    minmax(2rem, 1fr) [main-content-start] minmax(auto, 992px)
+    minmax(2rem, 1fr) [main-content-start] minmax(auto, 1100px)
     [main-content-end] minmax(2rem, 1fr);
   @media screen and (min-width: $md-breakpoint) {
     background-image: url("../images//bg-desktop.png");
@@ -54,10 +54,47 @@ body {
 }
 
 main {
+  --_border-radius: 10px;
+
   grid-column: main-content;
+  display: grid;
+  gap: 1rem 2rem;
+  @media screen and (min-width: $lg-breakpoint) {
+    grid-template-columns: 1fr 2fr;
+  }
 }
 
 .fylo-upper-section,
 .fylo-bottom-section {
   background-color: var(--blue-850);
+  border-radius: var(--_border-radius);
+  padding: var(--spacing-500);
+}
+
+.fylo-upper-section {
+  max-width: 350px;
+  border-top-right-radius: 100px;
+
+  nav {
+    margin-top: var(--spacing-400);
+  }
+
+  ul {
+    list-style-type: "";
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-200);
+    padding: 0;
+  }
+
+  button {
+    background-color: var(--blue-950);
+    border-radius: var(--_border-radius);
+    border: none;
+    cursor: pointer;
+    min-height: 3rem;
+    min-width: 3rem;
+    display: grid;
+    place-items: center;
+  }
 }
