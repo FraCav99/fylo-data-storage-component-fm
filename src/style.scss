@@ -1,5 +1,8 @@
 @use "./reset.scss";
 
+$md-breakpoint: 768px;
+$lg-breakpoint: 1440px;
+
 :root {
     // Colors
     --black: hsl(0, 0%, 0%);
@@ -33,4 +36,14 @@
 body {
     font-family: var(--font-fam);
     font-optical-sizing: auto;
+    min-height: 100dvh;
+    background-color: var(--blue-950);
+    background-image: url("../images/bg-mobile.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media screen and (min-width: $md-breakpoint) {
+        background-image: url("../images//bg-desktop.png");
+        background-size: 100% 50%;
+        background-position: bottom center;
+    }
 }
