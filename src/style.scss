@@ -154,5 +154,26 @@ main {
       color: var(--blue-200);
       font-size: var(--font-xs);
     }
+
+    @media screen and (min-width: $lg-breakpoint) {
+      top: 0;
+      bottom: auto;
+      left: auto;
+      right: var(--spacing-500);
+      transform: translate(0, -50%);
+      border-bottom-right-radius: 0;
+
+      &::after {
+        content: "";
+        border-width: 0 22px 22px 0;
+        border-style: solid;
+        border-color: var(--white);
+        border-color: transparent var(--white) transparent transparent;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: translate(0, 100%);
+      }
+    }
   }
 }
