@@ -44,8 +44,8 @@ body {
   display: grid;
   place-items: center stretch;
   grid-template-columns:
-    minmax(2rem, 1fr) [main-content-start] minmax(auto, 1100px)
-    [main-content-end] minmax(2rem, 1fr);
+    minmax(var(--spacing-400), 1fr) [main-content-start] minmax(auto, 1100px)
+    [main-content-end] minmax(var(--spacing-400), 1fr);
   @media screen and (min-width: $md-breakpoint) {
     background-image: url("../images//bg-desktop.png");
     background-size: 100% 50%;
