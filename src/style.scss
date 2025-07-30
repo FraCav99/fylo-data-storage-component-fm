@@ -26,6 +26,7 @@ $lg-breakpoint: 1440px;
   --spacing-700: 3.5rem;
 
   // Font size
+  --font-xl: 2.5rem;
   --font-sm: 0.875rem;
   --font-xs: 0.75rem;
 
@@ -96,5 +97,62 @@ main {
     min-width: 3rem;
     display: grid;
     place-items: center;
+  }
+}
+
+.fylo-bottom-section {
+  color: var(--blue-200);
+  position: relative;
+  font-size: var(--font-sm);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: var(--spacing-200);
+
+  .full {
+    grid-column: 1 / -1;
+  }
+
+  .extrabold {
+    font-weight: 700;
+  }
+
+  .uppercase {
+    text-transform: uppercase;
+  }
+
+  .meter-gauge {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: var(--spacing-100);
+    font-size: var(--font-xs);
+    meter {
+      width: 100%;
+    }
+  }
+
+  .leftover-storage-tooltip {
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: var(--spacing-100);
+    border-radius: var(--_border-radius);
+
+    position: absolute;
+    padding: var(--spacing-200) var(--spacing-400);
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 62px);
+
+    span:first-child {
+      color: var(--blue-950);
+      font-size: var(--font-xl);
+    }
+
+    span:last-child {
+      color: var(--blue-200);
+      font-size: var(--font-xs);
+    }
   }
 }
