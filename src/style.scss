@@ -16,7 +16,11 @@ $lg-breakpoint: 1440px;
 
   // Gradients
   --gradient-1: linear-gradient(var(--blue-850), var(--blue-950));
-  --gradient-2: linear-gradient(hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  --gradient-2: linear-gradient(
+    to right,
+    hsl(6, 100%, 80%),
+    hsl(335, 100%, 65%)
+  );
 
   // Spacing
   --spacing-100: 0.5rem;
@@ -126,8 +130,44 @@ main {
     justify-content: space-between;
     row-gap: var(--spacing-100);
     font-size: var(--font-xs);
+    position: relative;
+
     meter {
+      background: none; // Required to get rid of the default background property
+      -webkit-appearance: none; // Safari
+      -moz-appearance: none; // Firefox
       width: 100%;
+      border-radius: var(--_border-radius);
+      padding: 0.25rem;
+      background-color: var(--blue-950);
+      position: relative;
+    }
+
+    meter::-webkit-meter-bar {
+      // Safari
+      background: none; // Required to get rid of the default background property
+      background-color: var(--blue-950);
+    }
+
+    meter::-webkit-meter-optimum-value,
+    meter::-moz-meter-bar {
+      background-image: var(--gradient-2);
+      border-radius: 8px;
+    }
+
+    .meter-wrapper {
+      width: 100%;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: var(--white);
+        border-radius: 100%;
+        z-index: 1;
+        right: calc(var(--white-circle-position) + var(--spacing-100));
+      }
     }
   }
 
