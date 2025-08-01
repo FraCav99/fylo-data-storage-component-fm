@@ -1,6 +1,7 @@
-import { defineConfig } from 'vite';
-import sass from 'vite-plugin-sass';
- 
+import { defineConfig } from "vite";
+
 export default defineConfig({
-  plugins: [sass()],
+  server: {
+    host: true,
+  },
 });
