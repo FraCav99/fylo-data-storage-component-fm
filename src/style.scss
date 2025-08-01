@@ -49,7 +49,7 @@ body {
   display: grid;
   place-items: center stretch;
   grid-template-columns:
-    minmax(var(--spacing-400), 1fr) [main-content-start] minmax(auto, 1100px)
+    minmax(var(--spacing-400), 1fr) [main-content-start] minmax(auto, 950px)
     [main-content-end] minmax(var(--spacing-400), 1fr);
   @media screen and (min-width: $md-breakpoint) {
     background-image: url("../images//bg-desktop.png");
@@ -64,6 +64,7 @@ main {
   grid-column: main-content;
   display: grid;
   gap: 1rem 2rem;
+  align-items: end;
   padding-bottom: var(--spacing-700);
   @media screen and (min-width: $lg-breakpoint) {
     grid-template-columns: 1fr 2fr;
