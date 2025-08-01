@@ -12,9 +12,12 @@
     <title>Frontend Mentor | Fylo data storage component</title>
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <main>
@@ -40,15 +43,27 @@
               </button>
             </li>
           </ul>
+        </nav>
       </section>
-      </nav>
 
       <section class="fylo-bottom-section">
-        <p class="full">You've used <span class="extrabold uppercase">815 gb</span> of your storage</p>
+        <p class="full">
+          You've used
+          <span class="extrabold uppercase"
+            ><span data-storage-qty-used>815</span> gb</span
+          >
+          of your storage
+        </p>
 
         <div class="full extrabold uppercase meter-gauge">
           <div class="meter-slider-wrapper">
-            <meter class="full" value="815" min="0" max="1000" title="GB"></meter>
+            <meter
+              class="full"
+              value="815"
+              min="0"
+              max="1000"
+              title="GB"
+            ></meter>
             <div class="meter-slider" aria-hidden="true"></div>
           </div>
           <p>0 gb</p>
@@ -56,12 +71,12 @@
         </div>
 
         <p class="leftover-storage-tooltip uppercase extrabold">
-          <span>185</span>
+          <span data-storage-qty-left>185</span>
           <span>gb left</span>
         </p>
       </section>
     </main>
-    
+
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>
