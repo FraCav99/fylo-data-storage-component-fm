@@ -132,6 +132,13 @@ main {
     font-size: var(--font-xs);
     position: relative;
 
+    .meter-slider-wrapper {
+      width: 100%;
+      display: grid;
+      grid-template: 1fr / 1fr;
+      align-items: center;
+    }
+
     meter {
       background: none; // Required to get rid of the default background property
       -webkit-appearance: none; // Safari
@@ -140,7 +147,29 @@ main {
       border-radius: var(--_border-radius);
       padding: 0.25rem;
       background-color: var(--blue-950);
-      position: relative;
+      grid-row: 1 / 2;
+      grid-column: 1 / 2;
+    }
+
+    .meter-slider {
+      --meter-height: 20px;
+      --meter-min-width: 20px;
+
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      background-image: radial-gradient(
+          circle at calc(100% - 0.6rem) center,
+          white 0%,
+          white 6px,
+          transparent 6px
+        ),
+        var(--gradient-2);
+      z-index: 1;
+      min-height: calc(var(--meter-height) - var(--spacing-100));
+      border-radius: var(--_border-radius);
+      transform: translateX(0.25rem);
+      min-width: var(--meter-min-width);
+      width: calc(var(--slider-width, 0%) - var(--spacing-100));
     }
 
     meter::-webkit-meter-bar {
@@ -151,23 +180,7 @@ main {
 
     meter::-webkit-meter-optimum-value,
     meter::-moz-meter-bar {
-      background-image: var(--gradient-2);
-      border-radius: 8px;
-    }
-
-    .meter-wrapper {
-      width: 100%;
-      position: relative;
-      &::before {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        background-color: var(--white);
-        border-radius: 100%;
-        z-index: 1;
-        right: calc(var(--white-circle-position) + var(--spacing-100));
-      }
+      background: none;
     }
   }
 
