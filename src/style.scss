@@ -170,6 +170,16 @@ main {
       transform: translateX(0.25rem);
       min-width: var(--meter-min-width);
       width: calc(var(--slider-width, 0%) - var(--spacing-100));
+      animation: loadPercentage 1.5s cubic-bezier(0.79, 0.33, 0.14, 0.53);
+    }
+
+    @keyframes loadPercentage {
+      from {
+        width: 0;
+      }
+      to {
+        width: calc(var(--slider-width, 0%) - var(--spacing-100));
+      }
     }
 
     meter::-webkit-meter-bar {
